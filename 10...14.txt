@@ -1,0 +1,115 @@
+1. from functools 
+import partial
+def mul(x,y):
+	
+return x*y
+
+a=partial(mul,2)£»
+
+
+2. def add(x,y,z):
+    
+	return x+y+z
+
+
+from functools 
+import partial
+add
+A=partial(add,x=1,y=2,z=3)
+
+addA()
+
+
+
+
+
+
+
+
+
+
+2.2
+
+def add(x,*args):
+	
+	sum1=x
+	for i in args:
+		
+	sum1=sum1+i
+	
+	print(f"sum={sum1}")
+	
+	return sum1
+
+
+def add1(x,*args):
+	
+	z=add(x,*args)
+	
+	return partial(add1,z)
+
+
+add1(1)(2)(3)
+add1(1,2,3)(4)
+
+
+
+3
+
+def timer(func):
+	
+def Wrapper(*args,**akg):
+		
+	start=time.time()
+		
+	x=func(*args,**akg)
+		
+	end=time.time()
+		
+	print(end-start)
+		
+	return x
+	
+	return Wrapper
+
+@timer
+def add1(x,y):
+	
+	return x+y
+
+
+
+
+
+
+4.
+
+def timer2(func):
+	
+	def Wrapper(*args,**akg):
+		
+		try:
+			
+			x=func(*args,**akg)
+		
+		except Exception as e:
+			
+			print(e)
+			
+			return None
+		
+			return x
+	
+			return Wrapper
+
+@timer2
+def chu(*args,**akg):
+	
+			sum1=args[0]**2
+	print(args)
+	
+	for i in args:
+		
+		sum1=sum1/i
+	
+		return sum1
